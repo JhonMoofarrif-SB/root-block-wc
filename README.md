@@ -15,7 +15,7 @@ Abre [http://localhost:4200](http://localhost:4200) para ver el demo.
 ```bash
 npm run build
 ```
-Output en `dist/apps/demo/` listo para desplegar.
+Output en `apps/demo/dist/` listo para desplegar.
 
 ---
 

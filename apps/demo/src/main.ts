@@ -1,24 +1,45 @@
 /**
  * Root Block Design System - Demo App
  * Generador de matriz completa de botones
- * 
+ *
  * Los Web Components se cargan desde <script> en index.html
  */
 
 // Tipos
-type Brand = 'jelpit' | 'davivienda' | 'cien-cuadras' | 'doctor-aki' | 'seguros-bolivar' | 'white-label';
-type Theme = 'light' | 'dark';
-type Variant = 'primary' | 'secondary' | 'tertiary' | 'error';
-type TypeStyle = 'fill' | 'stroke' | 'text';
-type State = 'default' | 'hover' | 'pressed' | 'focus' | 'loading' | 'disabled' | 'disabled-hover';
+type Brand =
+  | "jelpit"
+  | "davivienda"
+  | "cien-cuadras"
+  | "doctor-aki"
+  | "seguros-bolivar"
+  | "white-label";
+type Theme = "light" | "dark";
+type Variant = "primary" | "secondary" | "tertiary" | "error";
+type TypeStyle = "fill" | "stroke" | "text";
+type State =
+  | "default"
+  | "hover"
+  | "pressed"
+  | "focus"
+  | "loading"
+  | "disabled"
+  | "disabled-hover";
 
 // Configuración de la matriz
-const VARIANTS: Variant[] = ['primary', 'secondary', 'tertiary', 'error'];
-const STATES: State[] = ['default', 'hover', 'pressed', 'focus', 'loading', 'disabled', 'disabled-hover'];
+const VARIANTS: Variant[] = ["primary", "secondary", "tertiary", "error"];
+const STATES: State[] = [
+  "default",
+  "hover",
+  "pressed",
+  "focus",
+  "loading",
+  "disabled",
+  "disabled-hover",
+];
 
 // Columnas: 4 tipos por typeStyle = 12 columnas
 // 1. Fill Icon Left
-// 2. Fill Icon Right  
+// 2. Fill Icon Right
 // 3. Fill No Icon
 // 4. Fill Icon Only
 // 5. Stroke Icon Left
@@ -40,20 +61,92 @@ interface ColumnConfig {
 
 const COLUMNS: ColumnConfig[] = [
   // Fill
-  { typeStyle: 'fill', iconLeft: true, iconRight: false, iconOnly: false, label: 'Fill<br/>Icon Left' },
-  { typeStyle: 'fill', iconLeft: false, iconRight: true, iconOnly: false, label: 'Fill<br/>Icon Right' },
-  { typeStyle: 'fill', iconLeft: false, iconRight: false, iconOnly: false, label: 'Fill<br/>No Icon' },
-  { typeStyle: 'fill', iconLeft: true, iconRight: false, iconOnly: true, label: 'Fill<br/>Icon Only' },
+  {
+    typeStyle: "fill",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: false,
+    label: "Fill<br/>Icon Left",
+  },
+  {
+    typeStyle: "fill",
+    iconLeft: false,
+    iconRight: true,
+    iconOnly: false,
+    label: "Fill<br/>Icon Right",
+  },
+  {
+    typeStyle: "fill",
+    iconLeft: false,
+    iconRight: false,
+    iconOnly: false,
+    label: "Fill<br/>No Icon",
+  },
+  {
+    typeStyle: "fill",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: true,
+    label: "Fill<br/>Icon Only",
+  },
   // Stroke
-  { typeStyle: 'stroke', iconLeft: true, iconRight: false, iconOnly: false, label: 'Stroke<br/>Icon Left' },
-  { typeStyle: 'stroke', iconLeft: false, iconRight: true, iconOnly: false, label: 'Stroke<br/>Icon Right' },
-  { typeStyle: 'stroke', iconLeft: false, iconRight: false, iconOnly: false, label: 'Stroke<br/>No Icon' },
-  { typeStyle: 'stroke', iconLeft: true, iconRight: false, iconOnly: true, label: 'Stroke<br/>Icon Only' },
+  {
+    typeStyle: "stroke",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: false,
+    label: "Stroke<br/>Icon Left",
+  },
+  {
+    typeStyle: "stroke",
+    iconLeft: false,
+    iconRight: true,
+    iconOnly: false,
+    label: "Stroke<br/>Icon Right",
+  },
+  {
+    typeStyle: "stroke",
+    iconLeft: false,
+    iconRight: false,
+    iconOnly: false,
+    label: "Stroke<br/>No Icon",
+  },
+  {
+    typeStyle: "stroke",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: true,
+    label: "Stroke<br/>Icon Only",
+  },
   // Text
-  { typeStyle: 'text', iconLeft: true, iconRight: false, iconOnly: false, label: 'Text<br/>Icon Left' },
-  { typeStyle: 'text', iconLeft: false, iconRight: true, iconOnly: false, label: 'Text<br/>Icon Right' },
-  { typeStyle: 'text', iconLeft: false, iconRight: false, iconOnly: false, label: 'Text<br/>No Icon' },
-  { typeStyle: 'text', iconLeft: true, iconRight: false, iconOnly: true, label: 'Text<br/>Icon Only' }
+  {
+    typeStyle: "text",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: false,
+    label: "Text<br/>Icon Left",
+  },
+  {
+    typeStyle: "text",
+    iconLeft: false,
+    iconRight: true,
+    iconOnly: false,
+    label: "Text<br/>Icon Right",
+  },
+  {
+    typeStyle: "text",
+    iconLeft: false,
+    iconRight: false,
+    iconOnly: false,
+    label: "Text<br/>No Icon",
+  },
+  {
+    typeStyle: "text",
+    iconLeft: true,
+    iconRight: false,
+    iconOnly: true,
+    label: "Text<br/>Icon Only",
+  },
 ];
 
 /**
@@ -70,28 +163,29 @@ function createIcon(): string {
 /**
  * Crea un botón basado en la configuración
  */
-function createButton(variant: Variant, column: ColumnConfig, state: State): string {
+function createButton(
+  variant: Variant,
+  column: ColumnConfig,
+  state: State,
+): string {
   const { typeStyle, iconLeft, iconRight, iconOnly } = column;
-  
-  const attrs: string[] = [
-    `variant="${variant}"`,
-    `type-style="${typeStyle}"`
-  ];
+
+  const attrs: string[] = [`variant="${variant}"`, `type-style="${typeStyle}"`];
 
   if (iconOnly) {
-    attrs.push('icon-only');
+    attrs.push("icon-only");
   }
 
-  if (state === 'loading') {
-    attrs.push('loading');
+  if (state === "loading") {
+    attrs.push("loading");
   }
 
-  if (state === 'disabled' || state === 'disabled-hover') {
-    attrs.push('disabled');
+  if (state === "disabled" || state === "disabled-hover") {
+    attrs.push("disabled");
   }
 
   const iconHtml = createIcon();
-  let content = '';
+  let content = "";
 
   if (iconOnly) {
     content = `<span slot="icon-left">${iconHtml}</span>`;
@@ -101,24 +195,27 @@ function createButton(variant: Variant, column: ColumnConfig, state: State): str
     } else if (iconRight) {
       content = `Button<span slot="icon-right">${iconHtml}</span>`;
     } else {
-      content = 'Button';
+      content = "Button";
     }
   }
 
-  return `<rb-button ${attrs.join(' ')}>${content}</rb-button>`;
+  return `<rb-button ${attrs.join(" ")}>${content}</rb-button>`;
 }
 
 /**
  * Genera la matriz completa
  */
 function generateMatrix(): string {
-  let html = '';
+  let html = "";
 
   // ====== HEADER NIVEL 1: TIPOS (FILL, STROKE, TEXT) ======
   html += '<div class="matrix-header"></div>'; // Esquina
-  html += '<div class="matrix-header-type" style="grid-column: span 4;">FILL</div>';
-  html += '<div class="matrix-header-type" style="grid-column: span 4;">STROKE</div>';
-  html += '<div class="matrix-header-type" style="grid-column: span 4;">TEXT</div>';
+  html +=
+    '<div class="matrix-header-type" style="grid-column: span 4;">FILL</div>';
+  html +=
+    '<div class="matrix-header-type" style="grid-column: span 4;">STROKE</div>';
+  html +=
+    '<div class="matrix-header-type" style="grid-column: span 4;">TEXT</div>';
 
   // ====== HEADER NIVEL 2: CONFIGURACIONES DE ICONOS ======
   html += '<div class="matrix-header"></div>'; // Esquina
@@ -136,18 +233,21 @@ function generateMatrix(): string {
   html += '<div class="matrix-header-config">Icon Only</div>';
 
   // Para cada variante
-  VARIANTS.forEach(variant => {
+  VARIANTS.forEach((variant) => {
     // Sección header
     html += `<div class="matrix-section-header">${variant.charAt(0).toUpperCase() + variant.slice(1)}</div>`;
 
     // Para cada estado
-    STATES.forEach(state => {
+    STATES.forEach((state) => {
       // Row label
-      const stateLabel = state.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const stateLabel = state
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
       html += `<div class="matrix-row-label">${stateLabel}</div>`;
 
       // Para cada columna
-      COLUMNS.forEach(column => {
+      COLUMNS.forEach((column) => {
         const button = createButton(variant, column, state);
         html += `<div class="matrix-cell">${button}</div>`;
       });
@@ -161,8 +261,8 @@ function generateMatrix(): string {
  * Clase principal de la demo
  */
 class DemoApp {
-  private currentBrand: Brand = 'jelpit';
-  private currentTheme: Theme = 'light';
+  private currentBrand: Brand = "jelpit";
+  private currentTheme: Theme = "light";
 
   constructor() {
     this.init();
@@ -170,25 +270,29 @@ class DemoApp {
 
   private init(): void {
     // Generar matriz
-    const matrixContainer = document.getElementById('matrix');
+    const matrixContainer = document.getElementById("matrix");
     if (matrixContainer) {
       matrixContainer.innerHTML = generateMatrix();
     }
 
     // Setup event listeners
     this.setupControls();
-    
+
     // Load initial theme
     this.loadTheme();
   }
 
   private setupControls(): void {
-    const brandSelect = document.getElementById('brand-select') as HTMLSelectElement;
-    const themeSelect = document.getElementById('theme-select') as HTMLSelectElement;
+    const brandSelect = document.getElementById(
+      "brand-select",
+    ) as HTMLSelectElement;
+    const themeSelect = document.getElementById(
+      "theme-select",
+    ) as HTMLSelectElement;
 
     if (brandSelect) {
       brandSelect.value = this.currentBrand;
-      brandSelect.addEventListener('change', () => {
+      brandSelect.addEventListener("change", () => {
         this.currentBrand = brandSelect.value as Brand;
         this.loadTheme();
       });
@@ -196,7 +300,7 @@ class DemoApp {
 
     if (themeSelect) {
       themeSelect.value = this.currentTheme;
-      themeSelect.addEventListener('change', () => {
+      themeSelect.addEventListener("change", () => {
         this.currentTheme = themeSelect.value as Theme;
         this.loadTheme();
       });
@@ -205,27 +309,27 @@ class DemoApp {
 
   private loadTheme(): void {
     // Remover link anterior si existe
-    const oldLink = document.getElementById('theme-css');
+    const oldLink = document.getElementById("theme-css");
     if (oldLink) {
       oldLink.remove();
     }
 
     // Crear nuevo link con el CSS correcto
-    const newLink = document.createElement('link');
-    newLink.id = 'theme-css';
-    newLink.rel = 'stylesheet';
+    const newLink = document.createElement("link");
+    newLink.id = "theme-css";
+    newLink.rel = "stylesheet";
     newLink.href = `/tokens/${this.currentBrand}-${this.currentTheme}.css`;
     document.head.appendChild(newLink);
 
     // Update HTML attributes
-    document.documentElement.setAttribute('data-brand', this.currentBrand);
-    document.documentElement.setAttribute('data-theme', this.currentTheme);
-    
+    document.documentElement.setAttribute("data-brand", this.currentBrand);
+    document.documentElement.setAttribute("data-theme", this.currentTheme);
+
     console.log(`🎨 Loaded theme: ${this.currentBrand}-${this.currentTheme}`);
   }
 }
 
 // Initialize app when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   new DemoApp();
 });

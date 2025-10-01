@@ -13,7 +13,7 @@
     "build:all": "npm run build:tokens && npm run build:ui",
 
     "demo:copy-tokens": "mkdir -p apps/demo/public/tokens && cp libs/tokens/dist/*.css apps/demo/public/tokens/",
-    "demo:copy-ui": "mkdir -p apps/demo/public/js && cp libs/ui/dist/index.js apps/demo/public/js/rb-ui.js",
+    "demo:copy-ui": "mkdir -p apps/demo/public/js && cp libs/ui/dist/index.js apps/demo/public/js/rb-ui.js && cp libs/ui/dist/index.js.map apps/demo/public/js/rb-ui.js.map 2>/dev/null || true",
     "demo:prepare": "npm run build:all && npm run demo:copy-tokens && npm run demo:copy-ui",
 
     "dev": "npm run demo:prepare && nx run demo:serve",

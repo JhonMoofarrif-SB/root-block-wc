@@ -5,7 +5,7 @@ export default defineConfig({
   root: __dirname,
   publicDir: 'public',
   build: {
-    outDir: '../../dist/apps/demo',
+    outDir: './dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
