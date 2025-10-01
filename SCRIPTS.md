@@ -25,7 +25,7 @@ npm run build:demo
 1. ✅ Build tokens
 2. ✅ Build UI
 3. ✅ Copia assets a public
-4. ✅ Build de producción en `dist/apps/demo/`
+4. ✅ Build de producción en `apps/demo/dist/`
 
 **Usa este para desplegar a Vercel o producción.**
 
@@ -215,10 +215,10 @@ dev (desarrollo)
 │       └── demo:copy-ui
 └── nx run demo:serve
 
-build (producción)
+build:demo (producción)
 ├── demo:prepare (igual que arriba)
 └── nx run demo:build
 ```
 
-**Conclusión**: Solo necesitas recordar `npm run dev` para desarrollo y `npm run build` para producción. 🚀
+**Conclusión**: Solo necesitas recordar `npm run dev` para desarrollo y `npm run build:demo` para producción. 🚀
 
