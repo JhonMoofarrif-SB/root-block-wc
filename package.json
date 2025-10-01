@@ -17,7 +17,8 @@
     "demo:prepare": "npm run build:all && npm run demo:copy-tokens && npm run demo:copy-ui",
 
     "dev": "npm run demo:prepare && nx run demo:serve",
-    "build": "npm run demo:prepare && nx run demo:build",
+    "build:demo": "npm run demo:prepare && nx run demo:build",
+    
     "test": "nx run-many -t test",
     "lint": "nx run-many -t lint"
   },

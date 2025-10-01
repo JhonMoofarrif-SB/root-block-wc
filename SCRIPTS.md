@@ -19,7 +19,7 @@ npm run dev
 
 ### **Build para Producción**
 ```bash
-npm run build
+npm run build:demo
 ```
 **Hace automáticamente:**
 1. ✅ Build tokens
@@ -131,9 +131,9 @@ Recarga la página para ver cambios
 
 ### **3. Build para Producción**
 ```bash
-npm run build
+npm run build:demo
 ```
-Output en `dist/apps/demo/` listo para deploy
+Output en `apps/demo/dist/` listo para deploy
 
 ### **4. Deploy a Vercel**
 ```bash
