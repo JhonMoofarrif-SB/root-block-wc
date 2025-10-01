@@ -19,6 +19,22 @@ Output en `apps/demo/dist/` listo para desplegar.
 
 ---
 
+## 🔄 CI/CD
+
+Este proyecto tiene configuración de CI/CD con GitHub Actions:
+
+- **CI Workflow** (`ci.yml`): Tests, linting y build en cada PR/push
+- **Deploy Workflow** (`deploy.yml`): Deploy automático a GitHub Pages
+
+**Para activar GitHub Pages:**
+1. Ve a Settings → Pages
+2. Source: **GitHub Actions**
+3. Tu demo estará en: `https://[usuario].github.io/root-block-wc`
+
+📖 **Documentación completa:** [.github/CI_SETUP.md](./.github/CI_SETUP.md)
+
+---
+
 ## 📦 Estructura del Proyecto
 
 ```
