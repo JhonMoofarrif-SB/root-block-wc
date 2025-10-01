@@ -13,7 +13,7 @@ Abre [http://localhost:4200](http://localhost:4200) para ver el demo.
 
 ### **Producción**
 ```bash
-npm run build
+npm run build:demo
 ```
 Output en `dist/apps/demo/` listo para desplegar.
 
