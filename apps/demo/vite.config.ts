@@ -28,18 +28,7 @@ export default defineConfig({
       ]
     }
   },
-  resolve: {
-    alias: {
-      // Alias para tokens (directorio completo)
-      '@root-block/tokens': resolve(__dirname, '../../libs/tokens/dist'),
-      // Alias para UI (archivo directo)
-      '@root-block/ui': resolve(__dirname, '../../libs/ui/dist/index.js'),
-      // Alias alternativo
-      '@rb/ui': resolve(__dirname, '../../libs/ui/dist/index.js'),
-      // Alias para servir tokens CSS
-      '/@tokens': resolve(__dirname, '../../libs/tokens/dist')
-    }
-  },
+  // No necesitamos alias, todo se carga desde public/
   optimizeDeps: {
     include: ['lit', 'lit/decorators.js', 'lit/directives/class-map.js']
   }

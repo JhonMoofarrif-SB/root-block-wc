@@ -10,14 +10,15 @@
   "scripts": {
     "build:tokens": "nx run tokens:build",
     "build:ui": "nx run ui:build",
-    "build": "nx run-many -t build",
-    "test": "nx run-many -t test",
-    "lint": "nx run-many -t lint",
-    "demo": "npm run demo:copy-tokens && nx run demo:serve",
+    "build:all": "npm run build:tokens && npm run build:ui",
+    "demo:copy-assets": "npm run demo:copy-tokens && npm run demo:copy-ui",
     "demo:copy-tokens": "mkdir -p apps/demo/public/tokens && cp libs/tokens/dist/*.css apps/demo/public/tokens/",
-    "demo:build": "npm run demo:copy-tokens && nx run demo:build",
-    "storybook": "nx run storybook:storybook",
-    "theme-builder": "nx run theme-builder:serve"
+    "demo:copy-ui": "mkdir -p apps/demo/public/js && cp libs/ui/dist/index.js apps/demo/public/js/rb-ui.js",
+    "demo:prepare": "npm run build:all && npm run demo:copy-assets",
+    "dev": "npm run demo:prepare && nx run demo:serve",
+    "build": "npm run demo:prepare && nx run demo:build",
+    "test": "nx run-many -t test",
+    "lint": "nx run-many -t lint"
   },
   "devDependencies": {
     "@nx/js": "^21.6.2",

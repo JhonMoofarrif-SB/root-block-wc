@@ -1,9 +1,9 @@
 /**
  * Root Block Design System - Demo App
  * Generador de matriz completa de botones
+ * 
+ * Los Web Components se cargan desde <script> en index.html
  */
-
-import '@root-block/ui';
 
 // Tipos
 type Brand = 'jelpit' | 'davivienda' | 'cien-cuadras' | 'doctor-aki' | 'seguros-bolivar' | 'white-label';
@@ -204,17 +204,24 @@ class DemoApp {
   }
 
   private loadTheme(): void {
-    const themeLink = document.getElementById('theme-css') as HTMLLinkElement;
-    if (themeLink) {
-      const cssPath = `/tokens/${this.currentBrand}-${this.currentTheme}.css`;
-      themeLink.href = cssPath;
-      
-      console.log(`🎨 Loading theme: ${this.currentBrand}-${this.currentTheme}`);
+    // Remover link anterior si existe
+    const oldLink = document.getElementById('theme-css');
+    if (oldLink) {
+      oldLink.remove();
     }
+
+    // Crear nuevo link con el CSS correcto
+    const newLink = document.createElement('link');
+    newLink.id = 'theme-css';
+    newLink.rel = 'stylesheet';
+    newLink.href = `/tokens/${this.currentBrand}-${this.currentTheme}.css`;
+    document.head.appendChild(newLink);
 
     // Update HTML attributes
     document.documentElement.setAttribute('data-brand', this.currentBrand);
     document.documentElement.setAttribute('data-theme', this.currentTheme);
+    
+    console.log(`🎨 Loaded theme: ${this.currentBrand}-${this.currentTheme}`);
   }
 }
 

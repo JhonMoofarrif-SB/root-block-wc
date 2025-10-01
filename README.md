@@ -1,209 +1,232 @@
-# Root Block Design System 🎨
+# 🎨 Root Block Design System
 
-Design System empresarial multi-marca construido con **Nx**, **Lit 3**, **TypeScript 5** y **Style Dictionary**.
+Sistema de diseño empresarial con Web Components multi-marca construido con Nx, Lit y TypeScript.
 
-## 🚀 Inicio Rápido
+## 🚀 Quick Start
 
+### **Desarrollo**
 ```bash
-# Instalar dependencias
 npm install
-
-# Build tokens (genera CSS para 6 marcas × 2 temas = 12 archivos)
-npm run build:tokens
-
-# Build UI components
-npm run build:ui
-
-# Ejecutar demo app (Nx + Vite)
-npm run demo
-# Abre automáticamente en http://localhost:4200
-
-# Build demo para producción
-npm run demo:build
+npm run dev
 ```
+Abre [http://localhost:4200](http://localhost:4200) para ver el demo.
+
+### **Producción**
+```bash
+npm run build
+```
+Output en `dist/apps/demo/` listo para desplegar.
+
+---
 
 ## 📦 Estructura del Proyecto
 
 ```
 root-block-wc/
 ├── libs/
-│   ├── tokens/              # Sistema de Design Tokens
+│   ├── tokens/          # Design Tokens (CSS Variables)
 │   │   ├── src/
-│   │   │   ├── primitives/brands/  # 6 marcas en JSON W3C
-│   │   │   ├── semantic/           # Light/Dark themes
-│   │   │   ├── components/         # Tokens de componentes
-│   │   │   └── builder.ts          # Build con Style Dictionary
-│   │   └── dist/            # 12 CSS generados
+│   │   │   ├── primitives/brands/  # 6 marcas
+│   │   │   ├── semantic/           # Light/Dark
+│   │   │   └── builder.ts          # Style Dictionary
+│   │   └── dist/                   # 12 CSS files generados
 │   │
-│   └── ui/                  # Librería de Web Components
+│   └── ui/              # Web Components (Lit)
 │       ├── src/
-│       │   ├── atoms/       # rb-button, rb-input, etc.
-│       │   ├── molecules/   # Componentes compuestos
-│       │   ├── organisms/   # Componentes complejos
-│       │   └── base/        # Clases base
-│       └── dist/            # Bundle JS optimizado
+│       │   ├── atoms/              # <rb-button>
+│       │   └── base/               # BaseAtom
+│       └── dist/                   # index.js (19KB, 3KB gzip)
 │
-├── apps/
-│   ├── demo/                # App demo (Nx + Vite + TypeScript) ✅
-│   │   ├── src/
-│   │   │   ├── main.ts      # App principal
-│   │   │   └── styles/      # CSS de la demo
-│   │   ├── index.html
-│   │   └── vite.config.ts
-│   ├── storybook/           # Documentación (TODO)
-│   └── theme-builder/       # Theme builder avanzado (TODO)
+└── apps/
+    └── demo/            # Demo Interactivo
+        ├── src/
+        │   └── main.ts             # Generador de matriz
+        ├── public/
+        │   ├── tokens/             # CSS copiados aquí
+        │   └── js/                 # rb-ui.js copiado aquí
+        └── index.html
 ```
 
-## 🎨 Marcas Disponibles
+---
 
-| Marca | Colores Principal | Font Family |
-|-------|-------------------|-------------|
-| **Jelpit** | #2e0063 (morado) + #82e778 (verde) | Bolivar Condensed |
-| **Davivienda** | #e1111c (rojo) | Davivienda, Roboto |
-| **Cien Cuadras** | #006098 (azul) + #ffa533 (naranja) | Ciencuadras, Montserrat |
-| **Doctor Aki** | #42671a (verde natural) | Dosis, Roboto |
-| **Seguros Bolívar** | #009056 (verde) + #ffe16f (amarillo) | Bolivar, Roboto |
-| **White Label** | Neutro (grises) | Roboto |
+## 🎯 Scripts Disponibles
 
-Cada marca tiene **2 temas**: Light y Dark
+| Script | Descripción |
+|--------|-------------|
+| `npm run dev` | Desarrollo completo (build + serve) |
+| `npm run build` | Build para producción |
+| `npm run test` | Ejecutar tests |
+| `npm run lint` | Ejecutar linter |
 
-## 🧩 Componentes Disponibles
+**Detalle completo en [SCRIPTS.md](./SCRIPTS.md)**
 
-### ✅ Átomos
+---
 
-#### `<rb-button>`
+## 🎨 Sistema de Tokens
 
-Botón interactivo con Shadow DOM, slots para íconos y WCAG AA compliant.
+### **6 Marcas Soportadas:**
+- 🏷️ **White Label** (default)
+- 🟣 **Jelpit** - Morado + Verde
+- 🔴 **Davivienda** - Rojo + Azul oscuro
+- 🔵 **Cien Cuadras** - Azul + Naranja
+- 🟢 **Doctor Aki** - Verde natural
+- 🟡 **Seguros Bolívar** - Verde + Amarillo
+
+### **2 Temas por Marca:**
+- ☀️ Light
+- 🌙 Dark
+
+### **Output:**
+12 archivos CSS (6 marcas × 2 temas):
+```
+dist/tokens/
+├── white-label-light.css
+├── white-label-dark.css
+├── jelpit-light.css
+├── jelpit-dark.css
+└── ...
+```
+
+---
+
+## 🧩 Web Components
+
+### **Componente: `<rb-button>`**
+
+#### **4 Variantes:**
+- `primary` - Acción principal
+- `secondary` - Acción secundaria
+- `tertiary` - Acción terciaria
+- `error` - Acción destructiva
+
+#### **3 Tipos de Estilo:**
+- `fill` - Botón sólido (default)
+- `stroke` - Botón outline
+- `text` - Botón ghost con underline
+
+#### **7 Estados:**
+- Default
+- Hover
+- Pressed
+- Focus
+- Loading
+- Disabled
+- Disabled Hover
+
+#### **Ejemplos de Uso:**
 
 ```html
-<!-- Básico -->
-<rb-button variant="primary" size="medium">Click me</rb-button>
-
-<!-- Con íconos (slots) -->
-<rb-button variant="secondary">
-  <svg slot="icon-left">...</svg>
-  Descargar
-  <svg slot="icon-right">...</svg>
+<!-- Primary Fill -->
+<rb-button variant="primary" type-style="fill">
+  Button
 </rb-button>
 
-<!-- Estados -->
-<rb-button disabled>Disabled</rb-button>
-<rb-button loading>Loading...</rb-button>
-<rb-button full-width>Full Width</rb-button>
+<!-- Secondary Stroke con ícono -->
+<rb-button variant="secondary" type-style="stroke">
+  <svg slot="icon-left">...</svg>
+  Button
+</rb-button>
+
+<!-- Tertiary Text -->
+<rb-button variant="tertiary" type-style="text">
+  Button
+</rb-button>
+
+<!-- Icon Only (circular) -->
+<rb-button variant="error" type-style="fill" icon-only>
+  <svg slot="icon-left">...</svg>
+</rb-button>
+
+<!-- Loading State -->
+<rb-button variant="primary" loading>
+  Processing...
+</rb-button>
+
+<!-- Disabled -->
+<rb-button variant="secondary" disabled>
+  Cannot Click
+</rb-button>
 ```
 
-**Propiedades:**
-- `variant`: `primary` | `secondary` | `outline` | `ghost` | `danger`
-- `size`: `small` | `medium` | `large`
-- `disabled`: boolean
-- `loading`: boolean
-- `full-width`: boolean
-- `type`: `button` | `submit` | `reset`
-- `aria-label`: string (accesibilidad)
+---
 
-**Eventos:**
-- `rb-button-click`: Se dispara al hacer click
+## 🌐 Demo Interactivo
 
-**Slots:**
-- Default: Contenido principal
-- `icon-left`: Ícono izquierdo
-- `icon-right`: Ícono derecho
+El demo muestra **336 casos** de botones:
+- 4 variantes × 3 tipos × 7 estados × 4 configuraciones de íconos
 
-## 💻 Uso del Sistema
+**Características:**
+- ✅ Selector de 6 marcas
+- ✅ Toggle Light/Dark
+- ✅ Headers jerárquicos (FILL | STROKE | TEXT)
+- ✅ Matriz visual completa
+- ✅ Iconos de plus en círculo (18px)
+- ✅ Cambio dinámico de temas
 
-### 1. Instalación
+---
 
+## 🚀 Deployment
+
+### **Vercel (Recomendado)**
+
+#### **Opción 1: CLI**
 ```bash
-npm install @root-block/tokens @root-block/ui
+npm install -g vercel
+vercel login
+vercel --prod
 ```
 
-### 2. HTML básico
+#### **Opción 2: GitHub**
+1. Push a GitHub
+2. Importa en [vercel.com](https://vercel.com)
+3. Deploy automático ✨
 
-```html
-<!DOCTYPE html>
-<html lang="es" data-brand="jelpit" data-theme="light">
-<head>
-  <!-- CSS de la marca -->
-  <link rel="stylesheet" href="@root-block/tokens/jelpit-light.css">
-  
-  <!-- JS de componentes (UN SOLO ARCHIVO, como Bootstrap) -->
-  <script type="module" src="@root-block/ui/dist/index.js"></script>
-</head>
-<body>
-  <rb-button variant="primary" size="large">
-    Mi Botón
-  </rb-button>
-</body>
-</html>
-```
-
-### 3. Cambio dinámico de marca/tema
-
-```javascript
-const html = document.documentElement;
-const themeLink = document.querySelector('link[rel="stylesheet"]');
-
-function changeBrand(brand, theme) {
-  // Actualizar CSS
-  themeLink.href = `@root-block/tokens/${brand}-${theme}.css`;
-  
-  // Actualizar atributos
-  html.setAttribute('data-brand', brand);
-  html.setAttribute('data-theme', theme);
+**Configuración en `vercel.json`:**
+```json
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/apps/demo"
 }
-
-changeBrand('davivienda', 'dark');
 ```
 
-## 🎯 CSS Custom Properties
+**Más detalles en [DEPLOYMENT.md](./DEPLOYMENT.md)**
 
-Todos los tokens están disponibles como CSS variables:
+---
 
-```css
-/* Colores por marca */
---{brand}-color-primary-base
---{brand}-color-primary-D100, D200, D300, D400
---{brand}-color-primary-L100, L200, L300, L400
+## 🛠️ Stack Tecnológico
 
-/* Semánticos (adaptan según tema) */
---semantic-{theme}-background-primary
---semantic-{theme}-text-primary
---semantic-{theme}-border-default
+| Tecnología | Versión | Propósito |
+|------------|---------|-----------|
+| **Nx** | 21.6+ | Monorepo toolkit |
+| **Lit** | 3.1+ | Web Components |
+| **TypeScript** | 5.4+ | Type safety |
+| **Vite** | 5.4+ | Build tool |
+| **Style Dictionary** | 4.0+ | Design Tokens |
+| **Vitest** | 1.5+ | Testing |
 
-/* Tipografía */
---{brand}-typography-fontFamily
---{brand}-typography-fontSize-h1 a h6, body, label, caption
+---
 
-/* Shadows */
---{brand}-shadow-xs, s, m, l, xl
+## 📐 Especificaciones de Diseño
 
-/* Gradientes */
---{brand}-gradient-primary-dark, base, light
-```
+### **Dimensiones del Botón:**
+- **Altura**: 40px
+- **Padding**: 8px 16px
+- **Gap** (ícono-texto): 8px
+- **Border**: 1px solid
+- **Border radius**: 50px (fully rounded)
 
-## 🛠️ Desarrollo
+### **Tipografía:**
+- **Font family**: Variable por marca
+- **Font weight**: 700 (bold)
+- **Font size**: 16px
+- **Line height**: 24px
 
-### Agregar un nuevo componente
+### **Iconos:**
+- **Tamaño normal**: 20×20px
+- **Icon only**: 40×40px (circular)
+- **Plus en círculo**: 18×18px (demo)
 
-1. Crear el archivo en `libs/ui/src/atoms/MiComponente.ts`
-2. Extender de `BaseAtom`
-3. Usar decoradores `@customElement` y `@property`
-4. Exportar en `libs/ui/src/index.ts`
-5. Build: `npm run build:ui`
-
-### Agregar una nueva marca
-
-1. Crear `libs/tokens/src/primitives/brands/mi-marca.json`
-2. Definir colores, typography, shadows, etc.
-3. Agregar marca al array en `builder.ts`
-4. Build: `npm run build:tokens`
-
-## 📊 Tamaños de Bundles
-
-- **Tokens CSS**: ~3.7-5.2 KB por archivo (12 archivos total)
-- **UI Bundle JS**: ~7.5 KB (sin minificar) / ~2.35 KB (gzipped)
-- **Estructura**: ⭐ **UN SOLO ARCHIVO** `dist/index.js` (como Bootstrap)
-- **Total para una marca**: ~6-8 KB (CSS + JS gzipped)
+---
 
 ## 🧪 Testing
 
@@ -211,39 +234,91 @@ Todos los tokens están disponibles como CSS variables:
 # Unit tests
 npm run test
 
-# Visual testing (TODO: Playwright + Chromatic)
-npm run test:visual
+# Linting
+npm run lint
 ```
-
-## 📖 Documentación Adicional
-
-- **[ALIAS_CONFIG.md](ALIAS_CONFIG.md)** - Configuración detallada de alias y paths
-- **[SUMMARY.md](SUMMARY.md)** - Resumen completo del proyecto
-- **[apps/demo/README.md](apps/demo/README.md)** - Documentación de la demo app
-- **[libs/ui/README.md](libs/ui/README.md)** - Documentación de Web Components
-- **[libs/tokens/README.md](libs/tokens/README.md)** - Documentación de tokens (TODO)
-
-## 📝 Próximos Pasos
-
-- [ ] Storybook con addons de accesibilidad
-- [ ] Theme Builder app
-- [ ] Más componentes (input, select, card, modal)
-- [ ] Testing visual automático
-- [ ] Publicación a npm
-- [ ] CI/CD con GitHub Actions
-
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit (`git commit -am 'Add: nueva funcionalidad'`)
-4. Push (`git push origin feature/nueva-funcionalidad`)
-5. Crea un Pull Request
-
-## 📄 Licencia
-
-MIT License - ver [LICENSE](LICENSE) para más detalles.
 
 ---
 
-**Hecho con ❤️ para Root Block**
+## 📚 Documentación Adicional
+
+- [SCRIPTS.md](./SCRIPTS.md) - Guía completa de scripts
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Guía de deployment a Vercel
+- [libs/tokens/README.md](./libs/tokens/README.md) - Sistema de tokens
+- [libs/ui/README.md](./libs/ui/README.md) - Web Components
+
+---
+
+## 🎯 Roadmap
+
+### **Completado ✅**
+- [x] Sistema de tokens multi-marca (6 marcas × 2 temas)
+- [x] Componente `<rb-button>` completo (336 casos)
+- [x] Demo interactivo con matriz visual
+- [x] Build optimizado para producción
+- [x] Deployment a Vercel configurado
+
+### **Pendiente 🚧**
+- [ ] PRIMARY STROKE estados completos
+- [ ] PRIMARY TEXT estados completos
+- [ ] SECONDARY variante completa
+- [ ] TERTIARY variante completa
+- [ ] ERROR variante completa
+- [ ] Más componentes (input, card, modal, etc.)
+- [ ] Storybook para documentación
+- [ ] Testing visual con Playwright
+- [ ] CI/CD con GitHub Actions
+
+---
+
+## 🤝 Contribuir
+
+Este es un proyecto empresarial interno. Para continuar el desarrollo:
+
+1. **Clonar el proyecto:**
+   ```bash
+   git clone <repo-url>
+   cd root-block-wc
+   ```
+
+2. **Instalar dependencias:**
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar desarrollo:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Hacer cambios** y seguir la guía en [SCRIPTS.md](./SCRIPTS.md)
+
+---
+
+## 📝 Prompt para Continuar
+
+Para retomar el desarrollo donde se quedó:
+
+```
+Continúo con Root Block Design System (Nx + Lit).
+
+Ya completamos PRIMARY FILL con todos sus estados mapeados a tokens semánticos.
+
+Pendiente: PRIMARY STROKE, PRIMARY TEXT, SECONDARY, TERTIARY, ERROR.
+
+Dame los colores de White Label para PRIMARY STROKE (7 estados: default, hover, pressed, focus, loading, disabled, disabled-hover) y los mapeo a variables semánticas.
+
+Archivos clave: libs/ui/src/atoms/RbButton.ts
+```
+
+---
+
+## 📄 Licencia
+
+Proyecto privado - Todos los derechos reservados.
+
+---
+
+**Versión:** 1.0.0  
+**Última actualización:** 1 de Octubre, 2025  
+**Autor:** Root Block Design System Team

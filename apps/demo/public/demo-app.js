@@ -4,7 +4,7 @@
  */
 
 // Importar Web Components (ruta relativa desde public/)
-import '../../../libs/ui/dist/index.js';
+import './js/index';
 
 // Estado
 let eventLog = [];
