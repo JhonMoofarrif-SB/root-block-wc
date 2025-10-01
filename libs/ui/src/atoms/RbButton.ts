@@ -1,7 +1,7 @@
 import { html, css, TemplateResult, CSSResultGroup } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
-import { BaseAtom } from '../base/BaseAtom.js';
+import { BaseAtom } from '../base/BaseAtom';
 
 /**
  * Evento que se dispara cuando se hace click en el botón

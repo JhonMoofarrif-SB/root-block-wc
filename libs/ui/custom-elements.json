@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "dist/index.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "t2"
+        },
+        {
+          "kind": "variable",
+          "name": "e2"
+        },
+        {
+          "kind": "variable",
+          "name": "i$4"
+        },
+        {
+          "kind": "variable",
+          "name": "x"
+        },
+        {
+          "kind": "variable",
+          "name": "i$1",
+          "default": "class i extends y$1 {\n  constructor() {\n    super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;\n  }\n  createRenderRoot() {\n    const t2 = super.createRenderRoot();\n    return this.renderOptions.renderBefore ??= t2.firstChild, t2;\n  }\n  update(t2) {\n    const r2 = this.render();\n    this.hasUpdated || (this.renderOptions.isConnected = this.isConnected), super.update(t2), this._$Do = B(r2, this.renderRoot, this.renderOptions);\n  }\n  connectedCallback() {\n    super.connectedCallback(), this._$Do?.setConnected(true);\n  }\n  disconnectedCallback() {\n    super.disconnectedCallback(), this._$Do?.setConnected(false);\n  }\n  render() {\n    return T;\n  }\n}"
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BaseAtom",
+          "members": [
+            {
+              "kind": "method",
+              "name": "dispatchCustomEvent",
+              "parameters": [
+                {
+                  "name": "eventName"
+                },
+                {
+                  "name": "detail"
+                },
+                {
+                  "name": "options"
+                }
+              ],
+              "description": "Método helper para dispatch de eventos personalizados con tipado"
+            },
+            {
+              "kind": "method",
+              "name": "getCSSCustomProperty",
+              "parameters": [
+                {
+                  "name": "propertyName"
+                }
+              ],
+              "description": "Método para obtener valores de CSS custom properties"
+            },
+            {
+              "kind": "method",
+              "name": "setCSSCustomProperty",
+              "parameters": [
+                {
+                  "name": "propertyName"
+                },
+                {
+                  "name": "value"
+                }
+              ],
+              "description": "Método para establecer valores de CSS custom properties"
+            }
+          ],
+          "events": [
+            {
+              "name": "eventName",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "i$1",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "function",
+          "name": "t$1",
+          "parameters": [
+            {
+              "name": "t2"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "n2",
+          "parameters": [
+            {
+              "name": "t2"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "r",
+          "parameters": [
+            {
+              "name": "r2"
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "e$2",
+          "parameters": [
+            {
+              "name": "e2"
+            },
+            {
+              "name": "r2"
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "RbButton",
+          "default": "class extends BaseAtom {\n  constructor() {\n    super(...arguments);\n    this.variant = \"primary\";\n    this.typeStyle = \"fill\";\n    this.type = \"button\";\n    this.disabled = false;\n    this.loading = false;\n    this.fullWidth = false;\n    this.iconOnly = false;\n    this.ariaLabel = null;\n  }\n  /**\n   * Maneja el evento de click\n   */\n  _handleClick(event) {\n    if (this.disabled || this.loading) {\n      event.preventDefault();\n      event.stopPropagation();\n      return;\n    }\n    this.dispatchCustomEvent(\"rb-button-click\", {\n      originalEvent: event\n    });\n  }\n  /**\n   * Renderiza el botón\n   */\n  render() {\n    const classes = {\n      button: true,\n      [`button--${this.variant}`]: true,\n      [`button--${this.typeStyle}`]: true,\n      \"button--loading\": this.loading,\n      \"button--icon-only\": this.iconOnly\n    };\n    const nothing = void 0;\n    return x`\n      <button\n        class=${e(classes)}\n        type=${this.type}\n        ?disabled=${this.disabled || this.loading}\n        aria-label=${this.ariaLabel ?? nothing}\n        aria-busy=${this.loading ? \"true\" : \"false\"}\n        @click=${this._handleClick}\n      >\n        <slot name=\"icon-left\"></slot>\n        <slot></slot>\n        <slot name=\"icon-right\"></slot>\n      </button>\n    `;\n  }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "t2",
+          "declaration": {
+            "name": "e2",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "t2",
+          "declaration": {
+            "name": "e2",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "BaseAtom",
+          "declaration": {
+            "name": "BaseAtom",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "LitElement",
+          "declaration": {
+            "name": "i$1",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RbButton",
+          "declaration": {
+            "name": "RbButton",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "css",
+          "declaration": {
+            "name": "i$4",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "customElement",
+          "declaration": {
+            "name": "t$1",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "html",
+          "declaration": {
+            "name": "x",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "property",
+          "declaration": {
+            "name": "n2",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "query",
+          "declaration": {
+            "name": "e$2",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "state",
+          "declaration": {
+            "name": "r",
+            "module": "dist/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BaseAtom",
+          "declaration": {
+            "name": "BaseAtom",
+            "module": "./base/BaseAtom.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RbButton",
+          "declaration": {
+            "name": "RbButton",
+            "module": "./atoms/RbButton.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RbButtonClickEvent",
+          "declaration": {
+            "name": "RbButtonClickEvent",
+            "module": "./atoms/RbButton.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "html",
+          "declaration": {
+            "name": "html",
+            "package": "lit"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "css",
+          "declaration": {
+            "name": "css",
+            "package": "lit"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "LitElement",
+          "declaration": {
+            "name": "LitElement",
+            "package": "lit"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TemplateResult",
+          "declaration": {
+            "name": "TemplateResult",
+            "package": "lit"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CSSResultGroup",
+          "declaration": {
+            "name": "CSSResultGroup",
+            "package": "lit"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "customElement",
+          "declaration": {
+            "name": "customElement",
+            "package": "lit/decorators.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "property",
+          "declaration": {
+            "name": "property",
+            "package": "lit/decorators.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "state",
+          "declaration": {
+            "name": "state",
+            "package": "lit/decorators.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "query",
+          "declaration": {
+            "name": "query",
+            "package": "lit/decorators.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/atoms/RbButton.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "meta",
+          "type": {
+            "text": "Meta"
+          },
+          "default": "{\n  title: 'Atoms/RbButton',\n  component: 'rb-button',\n  parameters: {\n    layout: 'centered',\n    docs: {\n      description: {\n        component: 'Botón interactivo según Design System Root Block. Soporta múltiples variantes, estados y configuraciones.',\n      },\n    },\n  },\n  argTypes: {\n    variant: {\n      control: { type: 'select' },\n      options: ['primary', 'secondary', 'tertiary', 'error'],\n      description: 'Variante visual del botón',\n      defaultValue: 'primary',\n    },\n    typeStyle: {\n      control: { type: 'select' },\n      options: ['fill', 'stroke', 'text'],\n      description: 'Tipo de estilo del botón',\n      defaultValue: 'fill',\n      name: 'type-style',\n    },\n    type: {\n      control: { type: 'select' },\n      options: ['button', 'submit', 'reset'],\n      description: 'Tipo de botón (para formularios)',\n      defaultValue: 'button',\n    },\n    disabled: {\n      control: { type: 'boolean' },\n      description: 'Si el botón está deshabilitado',\n      defaultValue: false,\n    },\n    loading: {\n      control: { type: 'boolean' },\n      description: 'Si el botón está en estado de carga',\n      defaultValue: false,\n    },\n    fullWidth: {\n      control: { type: 'boolean' },\n      description: 'Si el botón ocupa todo el ancho disponible',\n      defaultValue: false,\n      name: 'full-width',\n    },\n    iconOnly: {\n      control: { type: 'boolean' },\n      description: 'Si el botón es solo ícono (circular)',\n      defaultValue: false,\n      name: 'icon-only',\n    },\n    ariaLabel: {\n      control: { type: 'text' },\n      description: 'Label de accesibilidad (ARIA)',\n      name: 'aria-label',\n    },\n    text: {\n      control: { type: 'text' },\n      description: 'Texto del botón',\n      defaultValue: 'Button',\n    },\n  },\n  args: {\n    variant: 'primary',\n    typeStyle: 'fill',\n    type: 'button',\n    disabled: false,\n    loading: false,\n    fullWidth: false,\n    iconOnly: false,\n    text: 'Button',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Default",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Secondary",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    variant: 'secondary',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Tertiary",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    variant: 'tertiary',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Error",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    variant: 'error',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Stroke",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    typeStyle: 'stroke',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "TextStyle",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    typeStyle: 'text',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    disabled: true,\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Loading",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    loading: true,\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "FullWidth",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    fullWidth: true,\n  },\n  parameters: {\n    layout: 'padded',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "IconOnly",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: (args: any) => {\n    const handleClick = action('rb-button-click');\n    \n    return html`\n      <rb-button\n        variant=\"${args.variant}\"\n        type-style=\"${args.typeStyle}\"\n        ?disabled=\"${args.disabled}\"\n        ?loading=\"${args.loading}\"\n        ?icon-only=\"${args.iconOnly}\"\n        aria-label=\"Icon button\"\n        @rb-button-click=\"${handleClick}\"\n      >\n        <span slot=\"icon-left\">🚀</span>\n      </rb-button>\n    `;\n  },\n  args: {\n    iconOnly: true,\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "WithLeftIcon",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: (args: any) => {\n    const handleClick = action('rb-button-click');\n    \n    return html`\n      <rb-button\n        variant=\"${args.variant}\"\n        type-style=\"${args.typeStyle}\"\n        ?disabled=\"${args.disabled}\"\n        ?loading=\"${args.loading}\"\n        @rb-button-click=\"${handleClick}\"\n      >\n        <span slot=\"icon-left\">📧</span>\n        ${args.text}\n      </rb-button>\n    `;\n  },\n  args: {\n    text: 'Send Email',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "WithRightIcon",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: (args: any) => {\n    const handleClick = action('rb-button-click');\n    \n    return html`\n      <rb-button\n        variant=\"${args.variant}\"\n        type-style=\"${args.typeStyle}\"\n        ?disabled=\"${args.disabled}\"\n        ?loading=\"${args.loading}\"\n        @rb-button-click=\"${handleClick}\"\n      >\n        ${args.text}\n        <span slot=\"icon-right\">→</span>\n      </rb-button>\n    `;\n  },\n  args: {\n    text: 'Continue',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "WithBothIcons",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: (args: any) => {\n    const handleClick = action('rb-button-click');\n    \n    return html`\n      <rb-button\n        variant=\"${args.variant}\"\n        type-style=\"${args.typeStyle}\"\n        ?disabled=\"${args.disabled}\"\n        ?loading=\"${args.loading}\"\n        @rb-button-click=\"${handleClick}\"\n      >\n        <span slot=\"icon-left\">💾</span>\n        ${args.text}\n        <span slot=\"icon-right\">✓</span>\n      </rb-button>\n    `;\n  },\n  args: {\n    text: 'Save Changes',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "AllVariants",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: () => html`\n    <div style=\"display: flex; gap: 16px; flex-wrap: wrap; align-items: center;\">\n      <rb-button variant=\"primary\">Primary</rb-button>\n      <rb-button variant=\"secondary\">Secondary</rb-button>\n      <rb-button variant=\"tertiary\">Tertiary</rb-button>\n      <rb-button variant=\"error\">Error</rb-button>\n    </div>\n  `,\n  parameters: {\n    controls: { disable: true },\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "AllTypeStyles",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: () => html`\n    <div style=\"display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr);\">\n      <div style=\"display: flex; flex-direction: column; gap: 8px; align-items: center;\">\n        <h4 style=\"margin: 0;\">Fill</h4>\n        <rb-button variant=\"primary\" type-style=\"fill\">Primary</rb-button>\n        <rb-button variant=\"secondary\" type-style=\"fill\">Secondary</rb-button>\n        <rb-button variant=\"tertiary\" type-style=\"fill\">Tertiary</rb-button>\n        <rb-button variant=\"error\" type-style=\"fill\">Error</rb-button>\n      </div>\n      <div style=\"display: flex; flex-direction: column; gap: 8px; align-items: center;\">\n        <h4 style=\"margin: 0;\">Stroke</h4>\n        <rb-button variant=\"primary\" type-style=\"stroke\">Primary</rb-button>\n        <rb-button variant=\"secondary\" type-style=\"stroke\">Secondary</rb-button>\n        <rb-button variant=\"tertiary\" type-style=\"stroke\">Tertiary</rb-button>\n        <rb-button variant=\"error\" type-style=\"stroke\">Error</rb-button>\n      </div>\n      <div style=\"display: flex; flex-direction: column; gap: 8px; align-items: center;\">\n        <h4 style=\"margin: 0;\">Text</h4>\n        <rb-button variant=\"primary\" type-style=\"text\">Primary</rb-button>\n        <rb-button variant=\"secondary\" type-style=\"text\">Secondary</rb-button>\n        <rb-button variant=\"tertiary\" type-style=\"text\">Tertiary</rb-button>\n        <rb-button variant=\"error\" type-style=\"text\">Error</rb-button>\n      </div>\n    </div>\n  `,\n  parameters: {\n    controls: { disable: true },\n    layout: 'padded',\n  },\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Playground",
+          "type": {
+            "text": "Story"
+          },
+          "default": "{\n  render: Template,\n  args: {\n    variant: 'primary',\n    typeStyle: 'fill',\n    text: 'Interactive Button',\n    disabled: false,\n    loading: false,\n    fullWidth: false,\n    iconOnly: false,\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "meta",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Default",
+          "declaration": {
+            "name": "Default",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Secondary",
+          "declaration": {
+            "name": "Secondary",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Tertiary",
+          "declaration": {
+            "name": "Tertiary",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Error",
+          "declaration": {
+            "name": "Error",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Stroke",
+          "declaration": {
+            "name": "Stroke",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TextStyle",
+          "declaration": {
+            "name": "TextStyle",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Loading",
+          "declaration": {
+            "name": "Loading",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FullWidth",
+          "declaration": {
+            "name": "FullWidth",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IconOnly",
+          "declaration": {
+            "name": "IconOnly",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WithLeftIcon",
+          "declaration": {
+            "name": "WithLeftIcon",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WithRightIcon",
+          "declaration": {
+            "name": "WithRightIcon",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "WithBothIcons",
+          "declaration": {
+            "name": "WithBothIcons",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AllVariants",
+          "declaration": {
+            "name": "AllVariants",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AllTypeStyles",
+          "declaration": {
+            "name": "AllTypeStyles",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Playground",
+          "declaration": {
+            "name": "Playground",
+            "module": "src/atoms/RbButton.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/atoms/RbButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Web Component: Botón interactivo según Design System Root Block",
+          "name": "RbButton",
+          "cssProperties": [
+            {
+              "description": "Color de fondo del botón",
+              "name": "--rb-button-bg"
+            },
+            {
+              "description": "Color del texto del botón",
+              "name": "--rb-button-color"
+            },
+            {
+              "description": "Color del borde del botón",
+              "name": "--rb-button-border"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Contenido principal del botón",
+              "name": ""
+            },
+            {
+              "description": "Ícono a la izquierda del texto",
+              "name": "icon-left"
+            },
+            {
+              "description": "Ícono a la derecha del texto",
+              "name": "icon-right"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary' | 'tertiary' | 'error'"
+              },
+              "default": "'primary'",
+              "description": "Variante visual del botón",
+              "attribute": "variant",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "typeStyle",
+              "type": {
+                "text": "'fill' | 'stroke' | 'text'"
+              },
+              "default": "'fill'",
+              "description": "Tipo de estilo del botón",
+              "attribute": "type-style",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'button' | 'submit' | 'reset'"
+              },
+              "default": "'button'",
+              "description": "Tipo de botón (para formularios)",
+              "attribute": "type"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón está deshabilitado",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón está en estado de carga",
+              "attribute": "loading",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "fullWidth",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón ocupa todo el ancho disponible",
+              "attribute": "full-width",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "iconOnly",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón es solo ícono (circular)",
+              "attribute": "icon-only",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabel",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "description": "Label de accesibilidad (ARIA)",
+              "attribute": "aria-label"
+            },
+            {
+              "kind": "method",
+              "name": "_handleClick",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "description": "Maneja el evento de click"
+            },
+            {
+              "kind": "method",
+              "name": "dispatchCustomEvent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "CustomEventInit"
+                  }
+                }
+              ],
+              "description": "Método helper para dispatch de eventos personalizados con tipado",
+              "inheritedFrom": {
+                "name": "BaseAtom",
+                "module": "src/base/BaseAtom.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getCSSCustomProperty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "propertyName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Método para obtener valores de CSS custom properties",
+              "inheritedFrom": {
+                "name": "BaseAtom",
+                "module": "src/base/BaseAtom.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setCSSCustomProperty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "propertyName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Método para establecer valores de CSS custom properties",
+              "inheritedFrom": {
+                "name": "BaseAtom",
+                "module": "src/base/BaseAtom.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "description": "Se dispara cuando el botón es clickeado",
+              "name": "rb-button-click"
+            },
+            {
+              "name": "eventName",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "inheritedFrom": {
+                "name": "BaseAtom",
+                "module": "src/base/BaseAtom.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "variant",
+              "type": {
+                "text": "'primary' | 'secondary' | 'tertiary' | 'error'"
+              },
+              "default": "'primary'",
+              "description": "Variante visual del botón",
+              "fieldName": "variant",
+              "attribute": "variant"
+            },
+            {
+              "name": "type-style",
+              "type": {
+                "text": "'fill' | 'stroke' | 'text'"
+              },
+              "default": "'fill'",
+              "description": "Tipo de estilo del botón",
+              "fieldName": "typeStyle",
+              "attribute": "type-style"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "'button' | 'submit' | 'reset'"
+              },
+              "default": "'button'",
+              "description": "Tipo de botón (para formularios)",
+              "fieldName": "type",
+              "attribute": "type"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón está deshabilitado",
+              "fieldName": "disabled",
+              "attribute": "disabled"
+            },
+            {
+              "name": "loading",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón está en estado de carga",
+              "fieldName": "loading",
+              "attribute": "loading"
+            },
+            {
+              "name": "full-width",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón ocupa todo el ancho disponible",
+              "fieldName": "fullWidth",
+              "attribute": "full-width"
+            },
+            {
+              "name": "icon-only",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Si el botón es solo ícono (circular)",
+              "fieldName": "iconOnly",
+              "attribute": "icon-only"
+            },
+            {
+              "name": "aria-label",
+              "type": {
+                "text": "string | null"
+              },
+              "default": "null",
+              "description": "Label de accesibilidad (ARIA)",
+              "fieldName": "ariaLabel",
+              "attribute": "aria-label"
+            }
+          ],
+          "superclass": {
+            "name": "BaseAtom",
+            "module": "/src/base/BaseAtom.js"
+          },
+          "tagName": "rb-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RbButton",
+          "declaration": {
+            "name": "RbButton",
+            "module": "src/atoms/RbButton.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "rb-button",
+          "declaration": {
+            "name": "RbButton",
+            "module": "src/atoms/RbButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/atoms/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RbButton",
+          "declaration": {
+            "name": "RbButton",
+            "module": "./RbButton.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RbButtonClickEvent",
+          "declaration": {
+            "name": "RbButtonClickEvent",
+            "module": "./RbButton.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/base/BaseAtom.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Clase base para todos los componentes atómicos\n\nLos átomos son los componentes más básicos de la interfaz de usuario.\nSiguiendo Atomic Design, estos son elementos fundamentales como botones, inputs, labels, etc.",
+          "name": "BaseAtom",
+          "members": [
+            {
+              "kind": "method",
+              "name": "dispatchCustomEvent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "detail",
+                  "optional": true,
+                  "type": {
+                    "text": "T"
+                  }
+                },
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "CustomEventInit"
+                  }
+                }
+              ],
+              "description": "Método helper para dispatch de eventos personalizados con tipado"
+            },
+            {
+              "kind": "method",
+              "name": "getCSSCustomProperty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "propertyName",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Método para obtener valores de CSS custom properties"
+            },
+            {
+              "kind": "method",
+              "name": "setCSSCustomProperty",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "propertyName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Método para establecer valores de CSS custom properties"
+            }
+          ],
+          "events": [
+            {
+              "name": "eventName",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BaseAtom",
+          "declaration": {
+            "name": "BaseAtom",
+            "module": "src/base/BaseAtom.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

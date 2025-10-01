@@ -2,6 +2,20 @@
 
 Sistema de diseño empresarial con Web Components multi-marca construido con Nx, Lit y TypeScript.
 
+---
+
+## 📚 Documentación
+
+| Documento | Para quién | Descripción |
+|-----------|------------|-------------|
+| 📖 **README.md** | Todos | Este archivo - Inicio rápido |
+| 💼 **[EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md)** | **Jefes/Managers** | Resumen ejecutivo del proyecto |
+| ⚡ **[QUICK_START.md](./QUICK_START.md)** | Desarrolladores | Guía rápida de 5 minutos |
+| 🔧 **[TECHNICAL_OVERVIEW.md](./TECHNICAL_OVERVIEW.md)** | Devs Senior/Arquitectos | Detalles técnicos profundos |
+| 🔄 **[CI_SUMMARY.md](./CI_SUMMARY.md)** | DevOps/CI | Configuración de CI/CD |
+
+---
+
 ## 🚀 Quick Start
 
 ### **Desarrollo**
