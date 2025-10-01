@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build:tokens && npm run build:ui && npm run demo:build",
+  "buildCommand": "npx nx run tokens:build && npx nx run ui:build && npx nx run demo:build",
   "outputDirectory": "dist/apps/demo",
   "installCommand": "npm install",
   "framework": null,

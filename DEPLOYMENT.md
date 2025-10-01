@@ -68,7 +68,7 @@ El archivo `vercel.json` ya está configurado con:
 
 ```json
 {
-  "buildCommand": "npm run build:tokens && npm run build:ui && npm run demo:build",
+  "buildCommand": "npx nx run tokens:build && npx nx run ui:build && npx nx run demo:build",
   "outputDirectory": "dist/apps/demo",
   "installCommand": "npm install",
   "framework": null,
@@ -88,7 +88,12 @@ El archivo `vercel.json` ya está configurado con:
 
 ### **Error: "Build failed"**
 ```bash
-# Verifica que el build funcione localmente:
+# Verifica que el build funcione localmente usando Nx:
+npx nx run tokens:build
+npx nx run ui:build
+npx nx run demo:build
+
+# O usando los scripts del root:
 npm run build:tokens
 npm run build:ui
 npm run demo:build
