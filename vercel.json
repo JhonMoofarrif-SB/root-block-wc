@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build:tokens && npm run build:ui && npm run demo:build",
+  "outputDirectory": "dist/apps/demo",
+  "installCommand": "npm install",
+  "framework": null,
+  "devCommand": "npm run demo"
+}
+
