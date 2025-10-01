@@ -1,8 +1,0 @@
-{
-  "buildCommand": "npm run build:demo",
-  "outputDirectory": "dist/apps/demo",
-  "installCommand": "npm install",
-  "framework": null,
-  "devCommand": "npm run dev"
-}
-
