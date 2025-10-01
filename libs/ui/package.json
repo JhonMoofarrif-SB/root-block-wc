@@ -1,0 +1,47 @@
+{
+  "name": "@root-block/ui",
+  "version": "1.0.0",
+  "description": "Web Components library built with Lit following Atomic Design",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**/*",
+    "custom-elements.json"
+  ],
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "dev": "vite build --watch",
+    "test": "vitest",
+    "lint": "eslint src",
+    "analyze": "cem analyze --litelement"
+  },
+  "keywords": [
+    "web-components",
+    "lit",
+    "atomic-design",
+    "design-system",
+    "typescript"
+  ],
+  "author": "Root Block",
+  "license": "MIT",
+  "dependencies": {
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "typescript": "~5.6.0",
+    "vite": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "customElements": "custom-elements.json"
+}

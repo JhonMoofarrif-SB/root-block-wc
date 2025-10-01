@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es" data-brand="jelpit" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Root Block Design System - Button Matrix</title>
+    <link id="theme-css" rel="stylesheet" href="/tokens/jelpit-light.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      body {
+        font-family: var(--typography-fontFamily, 'Roboto', sans-serif);
+        background: var(--semantic-light-background-primary, #ffffff);
+        color: var(--semantic-light-text-primary, #1b1b1b);
+        line-height: 1.6;
+      }
+
+      .header {
+        background: linear-gradient(135deg, var(--color-primary-base, #2e0063), var(--color-secondary-base, #82e778));
+        color: white;
+        padding: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+      .header p { opacity: 0.9; }
+
+      .controls {
+        background: white;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .control-group { display: flex; flex-direction: column; gap: 0.5rem; }
+      .control-label { font-size: 0.875rem; font-weight: 600; color: var(--color-grayscale-D200, #5b5b5b); }
+      
+      .control-select {
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--color-grayscale-L200, #e1e1e1);
+        border-radius: 8px;
+        font-size: 0.875rem;
+        background: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .control-select:hover { border-color: var(--color-primary-base, #2e0063); }
+
+      .matrix-container { padding: 2rem; overflow-x: auto; }
+      
+      .matrix {
+        display: grid;
+        grid-template-columns: 120px repeat(12, 1fr);
+        gap: 1rem;
+        min-width: 1400px;
+      }
+
+      .matrix-header, .matrix-cell {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .matrix-header {
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-align: center;
+        background: var(--color-grayscale-L300, #f5f5f5);
+        border-radius: 8px;
+        color: var(--color-grayscale-D200, #5b5b5b);
+      }
+
+      /* Headers jerárquicos */
+      .matrix-header-type {
+        font-weight: 700;
+        font-size: 0.875rem;
+        background: var(--color-primary-base, #48555b);
+        color: white;
+        border-radius: 8px;
+        padding: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .matrix-header-config {
+        font-weight: 600;
+        font-size: 0.75rem;
+        background: var(--color-primary-L400, #edeeef);
+        color: var(--color-primary-base, #48555b);
+        border-radius: 8px;
+        padding: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .matrix-row-label {
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-align: right;
+        padding-right: 1rem;
+        color: var(--color-grayscale-D200, #5b5b5b);
+      }
+
+      .matrix-cell {
+        background: white;
+        border-radius: 8px;
+        border: 1px solid var(--color-grayscale-L200, #e1e1e1);
+        min-height: 60px;
+      }
+
+      .matrix-section-header {
+        grid-column: 1 / -1;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--color-primary-base, #2e0063);
+        padding: 1.5rem 0 0.5rem 0;
+        margin-top: 1rem;
+        border-bottom: 2px solid var(--color-primary-L300, #c0b2d0);
+      }
+
+      svg { width: 20px; height: 20px; fill: currentColor; }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🎨 Root Block Design System</h1>
+      <p>Button Component Matrix - 4 variantes × 3 tipos × 7 estados = 336 casos</p>
+    </header>
+
+    <div class="controls">
+      <div class="control-group">
+        <label class="control-label" for="brand-select">Marca</label>
+        <select id="brand-select" class="control-select">
+          <option value="jelpit">Jelpit</option>
+          <option value="davivienda">Davivienda</option>
+          <option value="cien-cuadras">Cien Cuadras</option>
+          <option value="doctor-aki">Doctor Aki</option>
+          <option value="seguros-bolivar">Seguros Bolívar</option>
+          <option value="white-label">White Label</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="theme-select">Tema</label>
+        <select id="theme-select" class="control-select">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="matrix-container">
+      <div id="matrix" class="matrix"></div>
+    </div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

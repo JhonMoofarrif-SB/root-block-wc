@@ -1,0 +1,87 @@
+{
+  "white-label": {
+    "color": {
+      "primary": {
+        "D400": { "$value": "#202121", "$type": "color" },
+        "D300": { "$value": "#292c2e", "$type": "color" },
+        "D200": { "$value": "#32383b", "$type": "color" },
+        "D100": { "$value": "#3b4448", "$type": "color" },
+        "base": { "$value": "#48555b", "$type": "color" },
+        "L100": { "$value": "#7f888c", "$type": "color" },
+        "L200": { "$value": "#a4aaad", "$type": "color" },
+        "L300": { "$value": "#c8ccce", "$type": "color" },
+        "L400": { "$value": "#edeeef", "$type": "color" }
+      },
+      "secondary": {
+        "D400": { "$value": "#769aa8", "$type": "color" },
+        "D300": { "$value": "#83a3b0", "$type": "color" },
+        "D200": { "$value": "#90adb8", "$type": "color" },
+        "D100": { "$value": "#9cb6c0", "$type": "color" },
+        "base": { "$value": "#afc4cc", "$type": "color" },
+        "L100": { "$value": "#c7d6db", "$type": "color" },
+        "L200": { "$value": "#d7e2e6", "$type": "color" },
+        "L300": { "$value": "#e7edf0", "$type": "color" },
+        "L400": { "$value": "#f7f9fa", "$type": "color" }
+      },
+      "tertiary": {
+        "D400": { "$value": "#90939e", "$type": "color" },
+        "D300": { "$value": "#9a9da7", "$type": "color" },
+        "D200": { "$value": "#a5a7b0", "$type": "color" },
+        "D100": { "$value": "#afb1b9", "$type": "color" },
+        "base": { "$value": "#bec0c6", "$type": "color" },
+        "L100": { "$value": "#d2d3d7", "$type": "color" },
+        "L200": { "$value": "#dfe0e3", "$type": "color" },
+        "L300": { "$value": "#ececee", "$type": "color" },
+        "L400": { "$value": "#f8f9f9", "$type": "color" }
+      },
+      "grayscale": {
+        "black": { "$value": "#1b1b1b", "$type": "color" },
+        "D400": { "$value": "#282828", "$type": "color" },
+        "D300": { "$value": "#414141", "$type": "color" },
+        "D200": { "$value": "#5b5b5b", "$type": "color" },
+        "D100": { "$value": "#757575", "$type": "color" },
+        "base": { "$value": "#9b9b9b", "$type": "color" },
+        "L100": { "$value": "#b9b9b9", "$type": "color" },
+        "L200": { "$value": "#e1e1e1", "$type": "color" },
+        "L300": { "$value": "#f5f5f5", "$type": "color" },
+        "L400": { "$value": "#fafafa", "$type": "color" },
+        "white": { "$value": "#ffffff", "$type": "color" }
+      },
+      "feedback": {
+        "error": { "base": { "$value": "#dc3545", "$type": "color" } },
+        "warning": { "base": { "$value": "#ffc100", "$type": "color" } },
+        "info": { "base": { "$value": "#007eff", "$type": "color" } },
+        "success": { "base": { "$value": "#28a745", "$type": "color" } }
+      }
+    },
+    "shadow": {
+      "xs": { "$value": "0px 2px 4px rgba(115, 115, 115, 0.16), 0px 0px 6px rgba(115, 115, 115, 0.16)", "$type": "shadow" },
+      "s": { "$value": "1px 4px 4px rgba(115, 115, 115, 0.04), 1px 1px 8px rgba(115, 115, 115, 0.16)", "$type": "shadow" },
+      "m": { "$value": "2px 8px 8px rgba(115, 115, 115, 0.04), 2px 2px 16px rgba(115, 115, 115, 0.16)", "$type": "shadow" },
+      "l": { "$value": "3px 12px 8px rgba(115, 115, 115, 0.08), 3px 3px 24px rgba(115, 115, 115, 0.16)", "$type": "shadow" },
+      "xl": { "$value": "3px 12px 16px rgba(115, 115, 115, 0.16), 4px 4px 24px rgba(115, 115, 115, 0.16)", "$type": "shadow" }
+    },
+    "typography": {
+      "fontFamily": { "$value": "'Roboto', sans-serif", "$type": "fontFamily" },
+      "fontSize": {
+        "h1": { "$value": "2.25rem", "$type": "dimension" },
+        "h2": { "$value": "2rem", "$type": "dimension" },
+        "h3": { "$value": "1.75rem", "$type": "dimension" },
+        "h4": { "$value": "1.5rem", "$type": "dimension" },
+        "h5": { "$value": "1.25rem", "$type": "dimension" },
+        "h6": { "$value": "1rem", "$type": "dimension" },
+        "body": { "$value": "1rem", "$type": "dimension" },
+        "label": { "$value": "0.875rem", "$type": "dimension" },
+        "caption": { "$value": "0.75rem", "$type": "dimension" },
+        "button": { "$value": "1rem", "$type": "dimension" }
+      }
+    },
+    "gradient": {
+      "primary": {
+        "dark": { "$value": "linear-gradient(226deg, #1f2121 14.67%, #32383b 85.36%)", "$type": "gradient" },
+        "base": { "$value": "linear-gradient(180deg, #32383b 0%, #48555b 100%)", "$type": "gradient" },
+        "light": { "$value": "linear-gradient(180deg, #a4aaad 0%, #edeeef 100%)", "$type": "gradient" }
+      }
+    }
+  }
+}

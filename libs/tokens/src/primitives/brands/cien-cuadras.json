@@ -1,0 +1,87 @@
+{
+  "cien-cuadras": {
+    "color": {
+      "primary": {
+        "D400": { "$value": "#042f4d", "$type": "color" },
+        "D300": { "$value": "#003a5c", "$type": "color" },
+        "D200": { "$value": "#074973", "$type": "color" },
+        "D100": { "$value": "#045586", "$type": "color" },
+        "base": { "$value": "#006098", "$type": "color" },
+        "L100": { "$value": "#3e98cc", "$type": "color" },
+        "L200": { "$value": "#77c9ff", "$type": "color" },
+        "L300": { "$value": "#c1eaff", "$type": "color" },
+        "L400": { "$value": "#eaf7ff", "$type": "color" }
+      },
+      "secondary": {
+        "D400": { "$value": "#df8816", "$type": "color" },
+        "D300": { "$value": "#ea8d1b", "$type": "color" },
+        "D200": { "$value": "#f4911f", "$type": "color" },
+        "D100": { "$value": "#fa9c29", "$type": "color" },
+        "base": { "$value": "#ffa533", "$type": "color" },
+        "L100": { "$value": "#f2a72e", "$type": "color" },
+        "L200": { "$value": "#f9b732", "$type": "color" },
+        "L300": { "$value": "#fac65d", "$type": "color" },
+        "L400": { "$value": "#fbe3b0", "$type": "color" }
+      },
+      "tertiary": {
+        "D400": { "$value": "#3e8426", "$type": "color" },
+        "D300": { "$value": "#4b9032", "$type": "color" },
+        "D200": { "$value": "#579c3d", "$type": "color" },
+        "D100": { "$value": "#63a848", "$type": "color" },
+        "base": { "$value": "#6fb453", "$type": "color" },
+        "L100": { "$value": "#88ce6b", "$type": "color" },
+        "L200": { "$value": "#a0e782", "$type": "color" },
+        "L300": { "$value": "#bdf0a6", "$type": "color" },
+        "L400": { "$value": "#ddf7d0", "$type": "color" }
+      },
+      "grayscale": {
+        "black": { "$value": "#1b1b1b", "$type": "color" },
+        "D400": { "$value": "#282828", "$type": "color" },
+        "D300": { "$value": "#414141", "$type": "color" },
+        "D200": { "$value": "#5b5b5b", "$type": "color" },
+        "D100": { "$value": "#666666", "$type": "color" },
+        "base": { "$value": "#9b9b9b", "$type": "color" },
+        "L100": { "$value": "#b9b9b9", "$type": "color" },
+        "L200": { "$value": "#e1e1e1", "$type": "color" },
+        "L300": { "$value": "#f5f5f5", "$type": "color" },
+        "L400": { "$value": "#fafafa", "$type": "color" },
+        "white": { "$value": "#ffffff", "$type": "color" }
+      },
+      "feedback": {
+        "error": { "base": { "$value": "#dc3545", "$type": "color" } },
+        "warning": { "base": { "$value": "#ffc100", "$type": "color" } },
+        "info": { "base": { "$value": "#007eff", "$type": "color" } },
+        "success": { "base": { "$value": "#28a745", "$type": "color" } }
+      }
+    },
+    "shadow": {
+      "xs": { "$value": "0px 0px 6px 0px rgba(115, 115, 115, 0.16), 0px 2px 4px 0px rgba(115, 115, 115, 0.16)", "$type": "shadow" },
+      "s": { "$value": "1px 1px 8px 0px rgba(115, 115, 115, 0.16), 1px 4px 4px 0px rgba(115, 115, 115, 0.04)", "$type": "shadow" },
+      "m": { "$value": "2px 2px 16px 0px rgba(115, 115, 115, 0.16), 2px 8px 8px 0px rgba(115, 115, 115, 0.04)", "$type": "shadow" },
+      "l": { "$value": "3px 3px 24px 0px rgba(115, 115, 115, 0.16), 3px 12px 8px 0px rgba(115, 115, 115, 0.08)", "$type": "shadow" },
+      "xl": { "$value": "4px 4px 24px 0px rgba(115, 115, 115, 0.16), 3px 12px 16px 0px rgba(115, 115, 115, 0.16)", "$type": "shadow" }
+    },
+    "typography": {
+      "fontFamily": { "$value": "'Ciencuadras', 'Montserrat', sans-serif", "$type": "fontFamily" },
+      "fontSize": {
+        "h1": { "$value": "2.25rem", "$type": "dimension" },
+        "h2": { "$value": "2rem", "$type": "dimension" },
+        "h3": { "$value": "1.75rem", "$type": "dimension" },
+        "h4": { "$value": "1.5rem", "$type": "dimension" },
+        "h5": { "$value": "1.25rem", "$type": "dimension" },
+        "h6": { "$value": "1rem", "$type": "dimension" },
+        "body": { "$value": "1rem", "$type": "dimension" },
+        "label": { "$value": "0.875rem", "$type": "dimension" },
+        "caption": { "$value": "0.75rem", "$type": "dimension" },
+        "button": { "$value": "1rem", "$type": "dimension" }
+      }
+    },
+    "gradient": {
+      "primary": {
+        "dark": { "$value": "linear-gradient(224deg, #042f4d 25.42%, #074973 72.29%)", "$type": "gradient" },
+        "base": { "$value": "linear-gradient(178deg, #074973 8.46%, #006098 92.31%)", "$type": "gradient" },
+        "light": { "$value": "linear-gradient(186deg, #77c9ff 4.73%, #eaf7ff 95.27%)", "$type": "gradient" }
+      }
+    }
+  }
+}

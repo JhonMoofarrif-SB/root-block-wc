@@ -1,0 +1,16 @@
+{
+  "button": {
+    "padding": {
+      "small": { "$value": "8px 16px", "$type": "spacing" },
+      "medium": { "$value": "12px 24px", "$type": "spacing" },
+      "large": { "$value": "16px 32px", "$type": "spacing" }
+    },
+    "fontSize": {
+      "small": { "$value": "0.875rem", "$type": "dimension" },
+      "medium": { "$value": "1rem", "$type": "dimension" },
+      "large": { "$value": "1.125rem", "$type": "dimension" }
+    },
+    "borderRadius": { "$value": "8px", "$type": "dimension" },
+    "fontWeight": { "$value": "500", "$type": "fontWeight" }
+  }
+}

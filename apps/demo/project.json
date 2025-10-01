@@ -1,0 +1,51 @@
+{
+  "name": "demo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/demo/src",
+  "projectType": "application",
+  "tags": ["type:app", "scope:demo"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo:build",
+        "port": 4200
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "demo:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "demo:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/demo"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "demo:build",
+        "port": 4300
+      }
+    }
+  }
+}

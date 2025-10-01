@@ -1,0 +1,21 @@
+{
+  "semantic": {
+    "dark": {
+      "background": {
+        "primary": { "$value": "#1b1b1b", "$type": "color" },
+        "secondary": { "$value": "#282828", "$type": "color" },
+        "tertiary": { "$value": "#414141", "$type": "color" }
+      },
+      "text": {
+        "primary": { "$value": "#ffffff", "$type": "color" },
+        "secondary": { "$value": "#e1e1e1", "$type": "color" },
+        "disabled": { "$value": "#9b9b9b", "$type": "color" },
+        "inverse": { "$value": "#1b1b1b", "$type": "color" }
+      },
+      "border": {
+        "default": { "$value": "#5b5b5b", "$type": "color" },
+        "hover": { "$value": "#757575", "$type": "color" }
+      }
+    }
+  }
+}
