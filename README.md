@@ -13,7 +13,7 @@ Abre [http://localhost:4200](http://localhost:4200) para ver el demo.
 
 ### **Producción**
 ```bash
-npm run build:demo
+npm run build
 ```
 Output en `dist/apps/demo/` listo para desplegar.
 
@@ -55,6 +55,8 @@ root-block-wc/
 |--------|-------------|
 | `npm run dev` | Desarrollo completo (build + serve) |
 | `npm run build` | Build para producción |
+| `npm run build:tokens` | Solo build de tokens |
+| `npm run build:ui` | Solo build de UI |
 | `npm run test` | Ejecutar tests |
 | `npm run lint` | Ejecutar linter |
 

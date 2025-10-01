@@ -2,15 +2,14 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  root: '.',
+  root: __dirname,
   publicDir: 'public',
   build: {
     outDir: '../../dist/apps/demo',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        app: resolve(__dirname, 'src/main.ts')
+        main: resolve(__dirname, 'index.html')
       }
     },
     // Copiar archivos estáticos

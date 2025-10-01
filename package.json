@@ -11,12 +11,13 @@
     "build:tokens": "nx run tokens:build",
     "build:ui": "nx run ui:build",
     "build:all": "npm run build:tokens && npm run build:ui",
-    "demo:copy-assets": "npm run demo:copy-tokens && npm run demo:copy-ui",
+
     "demo:copy-tokens": "mkdir -p apps/demo/public/tokens && cp libs/tokens/dist/*.css apps/demo/public/tokens/",
     "demo:copy-ui": "mkdir -p apps/demo/public/js && cp libs/ui/dist/index.js apps/demo/public/js/rb-ui.js",
-    "demo:prepare": "npm run build:all && npm run demo:copy-assets",
+    "demo:prepare": "npm run build:all && npm run demo:copy-tokens && npm run demo:copy-ui",
+
     "dev": "npm run demo:prepare && nx run demo:serve",
-    "build:demo": "npm run demo:prepare && nx run demo:build",
+    "build": "npm run demo:prepare && nx run demo:build",
     "test": "nx run-many -t test",
     "lint": "nx run-many -t lint"
   },
