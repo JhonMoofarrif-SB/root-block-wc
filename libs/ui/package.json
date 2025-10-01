@@ -20,7 +20,7 @@
     "build": "vite build && tsc --emitDeclarationOnly",
     "dev": "vite build --watch",
     "test": "vitest",
-    "lint": "eslint src",
+    "lint": "eslint src --max-warnings 10",
     "analyze": "cem analyze --litelement"
   },
   "keywords": [
