@@ -1,5 +1,13 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "packageRoot": "dist/{projectName}",
+        "currentVersionResolver": "git-tag"
+      }
+    }
+  },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [

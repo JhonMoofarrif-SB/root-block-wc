@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "composite": true
+    "composite": true,
+    "rootDir": "."
   },
   "exclude": ["src/**/*.spec.ts", "src/**/*.test.ts"],
   "include": [
@@ -13,6 +14,7 @@
     "src/**/*.stories.tsx",
     "src/**/*.stories.mdx",
     ".storybook/*.js",
-    ".storybook/*.ts"
+    ".storybook/*.ts",
+    "custom-elements.json"
   ]
 }

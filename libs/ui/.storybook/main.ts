@@ -12,11 +12,6 @@ const config: StorybookConfig = {
   staticDirs: ['../../tokens/dist'],
   typescript: {
     check: false,
-    reactDocgen: 'react-docgen-typescript',
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
-    },
   },
 };
 
