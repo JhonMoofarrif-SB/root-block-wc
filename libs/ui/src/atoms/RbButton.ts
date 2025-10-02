@@ -7,6 +7,7 @@ import { BaseAtom } from '../base/BaseAtom';
  * Evento que se dispara cuando se hace click en el botón
  */
 export interface RbButtonClickEvent {
+  
   originalEvent: MouseEvent;
 }
 
